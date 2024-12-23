@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Unique Blog</title>
+    <style>
+        /* CSS Reset */
+        body, h1, h2, h3, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: var(--bg-color);
+            color: var(--text-color);
+            padding: 0 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        :root {
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --header-bg: #333;
+            --header-text: #fff;
+            --link-color: #007BFF;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #f1f1f1;
+            --header-bg: #222;
+            --header-text: #ddd;
+            --link-color: #4d9efc;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--header-text);
+            padding: 10px 15px;
+            background: #444;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #555;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .post img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .post-content {
+            flex: 1;
+        }
+
+        .post h2 {
+            font-size: 1.8rem;
+            color: var(--text-color);
+        }
+
+        .post p {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        .post a {
+            color: var(--link-color);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: var(--header-bg);
+            color: var(--header-text);
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .post {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .post img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-switcher" onclick="toggleTheme()">Switch Theme</div>
+
+    <header>
+        <h1>Welcome to My Blog</h1>
+        <p>Your daily dose of awesome articles</p>
+        <nav>
+            <a href="about-us.html">About</a>
+            <a href="contact_us.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="post">
+            <img src="/images/image 1.jpg" alt="Post Image">
+            <div class="post-content">
+                <h2>Post Title 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec urna nec elit feugiat congue. <a href="/blog/blog_post_1.html">Read more...</a></p>
+            </div>
+        </div>
+        <div class="post">
+            <img src="/images/image 2.jpg" alt="Post Image">
+            <div class="post-content">
+                <h2>Post Title 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec urna nec elit feugiat congue. <a href="/blog/blog_post_2.html">Read more...</a></p>
+            </div>
+        </div>
+        <div class="post">
+            <img src="/images/image 3.jpg" alt="Post Image">
+            <div class="post-content">
+                <h2>Post Title 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec urna nec elit feugiat congue. <a href="/blog/blog_post_3.html">Read more...</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.dataset.theme = document.body.dataset.theme === 'dark' ? '' : 'dark';
+        }
+
+        // Example JavaScript for future interactivity
+        // document.querySelectorAll('.post a').forEach(link => {
+        //     link.addEventListener('click', event => {
+        //         event.preventDefault();
+        //         alert('Link clicked! Add your logic here.');
+        //     });
+        // });
+    </script>
+</body>
+</html>
